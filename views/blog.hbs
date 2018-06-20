@@ -1,0 +1,51 @@
+{{> header }}
+	
+	<div id="main_body">
+		<div class="main_content">
+			<h3>Welcome to {{title}}</h3>
+			<main id="mainSection">
+				<button id="getBlogsBtn" class="mdc-button mdc-button--raised" data-type="postsContainer">
+				  <i class="material-icons mdc-button__icon" aria-hidden="true">loop</i>
+				  View Blogs
+				</button>
+				<button id="addPostBtn" class="mdc-button mdc-button--raised" data-type="addPost">
+				  <i class="material-icons mdc-button__icon" aria-hidden="true">comment</i>
+				  Add a Post
+				</button>
+				<div id="sectionContainer">
+					<section id="postsContainer" class="noDisplay">
+						
+					</section>
+					<section id="addPost" class="noDisplay">
+						<form id="postContainerForm">
+							<div class="mdc-text-field"  data-mdc-auto-init="MDCTextField">
+							  <input type="text" id="name" class="mdc-text-field__input" required>
+							  <label class="mdc-floating-label" for="name">Enter Author's Name</label>
+							</div>
+							<div class="mdc-text-field"  data-mdc-auto-init="MDCTextField">
+							  <input type="text" id="title" class="mdc-text-field__input" required>
+							  <label class="mdc-floating-label" for="title">Enter Title of Post</label>
+							</div>
+							<div id="text-field-container">
+								<div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+								  	<textarea id="blogContent" class="mdc-text-field__input" rows="8" cols="40" required></textarea>
+									<label for="blogContent" class="mdc-floating-label">Enter Blog Content</label>
+								</div>
+							</div>
+							<button type='submit' class='mdc-button mdc-button--raised mdc-button--dense'>
+                                <i class='material-icons mdc-button__icon'>done</i>
+                                Addpost
+                            </button>
+						</form>
+					</section>
+				</div>
+
+            </main>
+		</div>
+	</div>
+	<script src="/js/blogs.js"></script>
+	<script>
+	    window.mdc.autoInit();
+	</script>
+
+{{> footer-end }}

@@ -1,0 +1,16 @@
+@import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/floating-label/mdc-floating-label";
+@import "@material/line-ripple/mdc-line-ripple";
+
+$color: #0091EA;
+
+.mdc-button {
+	@include mdc-button-container-fill-color($color);
+}
+div.mdc-text-field--upgraded {
+	@include mdc-text-field-focused-outline-color(#ffffff);
+	// @include mdc-text-field-textarea-stroke-color(#fff);
+	// @include mdc-text-field-fullwidth-bottom-line-color(#fff);
+	// @include mdc-line-ripple-color(#fff);
+}
