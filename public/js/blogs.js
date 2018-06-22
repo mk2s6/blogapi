@@ -9,12 +9,11 @@ $(function() {
                             "<div class='mdc-card__primary-action mdc-ripple-upgraded'>"+
                                 "<div class='demo-card__primary' >"+
                                     "<h2 class='demo-card__title mdc-typography--headline6'>{{title}}</h2>"+
-                                    "<h3 class='demo-card__subtitle mdc-typography--subtitle2'>by {{name}}</h3>"+
+                                    "<h3 class='demo-card__subtitle mdc-typography--subtitle2'>by {{Author}}</h3>"+
                                 "</div>"+
                             "</div>"+
                             "<div class='demo-card__secondary mdc-typography--body2'>{{blogContent}}</div>" +
                             "</div>";
-
 
     function displayBlogs(post) {
         postsContainer.append(Mustache.render(postTemplate, post))
@@ -30,7 +29,7 @@ $(function() {
         event.preventDefault();
         postsContainer.html("");
         $.ajax({
-            url: '/blogContent',
+            url: 'http://localhost:1337/blog',
             type: 'GET',
             dataType: 'json',
             success : function (res) {
@@ -45,7 +44,7 @@ $(function() {
     postContainerForm.on('submit', function(event) {
         event.preventDefault();
         var post = {
-            name : $(this).find('#name').val(),
+            Author : $(this).find('#name').val(),
             title : $(this).find('#title').val(),
             blogContent : $(this).find('#blogContent').val()
         };
@@ -55,13 +54,14 @@ $(function() {
         } else {        
             console.log(post);
             $.ajax({
-                url: '/addPost',
+                url: 'http://localhost:1337/blog',
                 type: 'POST',
                 data: post,
                 success : function (res) {
-                    console.log(res);
-                    alert(res.msg);
-                    window.location = res.redirectTo;
+                    if (res) {
+                        alert('Post added to Blog..!!');
+                        window.location = '/';   
+                    }
                 }
             });
         }

@@ -41,6 +41,11 @@ app.listen(port, function (req, res) {
 	console.log('Server listnening at ' + port);
 });
 
+// app.use(function (req, res, next) {
+// 	console.log(req);
+// 	next();
+// });
+
 //Appling routes
 app.use(index);
 

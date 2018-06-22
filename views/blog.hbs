@@ -19,11 +19,11 @@
 					<section id="addPost" class="noDisplay">
 						<form id="postContainerForm">
 							<div class="mdc-text-field"  data-mdc-auto-init="MDCTextField">
-							  <input type="text" id="name" class="mdc-text-field__input" required>
+							  <input type="text" id="name" class="mdc-text-field__input" autocomplete="off" required>
 							  <label class="mdc-floating-label" for="name">Enter Author's Name</label>
 							</div>
 							<div class="mdc-text-field"  data-mdc-auto-init="MDCTextField">
-							  <input type="text" id="title" class="mdc-text-field__input" required>
+							  <input type="text" id="title" class="mdc-text-field__input" autocomplete="off" required>
 							  <label class="mdc-floating-label" for="title">Enter Title of Post</label>
 							</div>
 							<div id="text-field-container">
@@ -44,8 +44,4 @@
 		</div>
 	</div>
 	<script src="/js/blogs.js"></script>
-	<script>
-	    window.mdc.autoInit();
-	</script>
-
 {{> footer-end }}
